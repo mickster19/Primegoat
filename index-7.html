@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#110e1b">
+<title>PRIME GOAT TIPS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#110e1b;--panel:#1a1627;--panel2:#241e35;--line:#352d4c;
+  --text:#f4f1fa;--sub:#9d96b3;
+  --gold:#f2c14e;--ember:#ff8a4c;--ghost:#a99cff;
+  --win:#46d9a0;--loss:#ff6b7a;--ac:var(--gold);
+  --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --body:'DM Sans','Segoe UI',system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:15px;line-height:1.45;
+  padding:calc(env(safe-area-inset-top,0px) + 14px) 14px calc(env(safe-area-inset-bottom,0px) + 96px);
+  display:flex;justify-content:center;
+  background-image:radial-gradient(120% 60% at 50% -10%,#2a1f45 0%,transparent 60%)}
+.wrap{width:100%;max-width:560px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+
+/* header */
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 2px 18px}
+.brand{display:flex;align-items:center;gap:11px}
+.mark-logo{width:42px;height:42px;border-radius:13px;background:linear-gradient(145deg,var(--gold),#c98a1b);color:#1b1306;
+  display:grid;place-items:center;font:800 17px var(--display);letter-spacing:-.02em;box-shadow:0 6px 20px -6px rgba(242,193,78,.55)}
+.brand h1{margin:0;font:800 20px/1 var(--display);letter-spacing:.01em}
+.brand h1 span{color:var(--gold)}
+.brand small{display:block;color:var(--sub);font-size:12px;margin-top:4px}
+.today{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:12.5px;font-weight:500;color:var(--sub);text-align:right}
+
+/* banner */
+.banner{background:rgba(255,138,76,.1);border:1px solid rgba(255,138,76,.35);color:#ffc7a8;border-radius:12px;padding:10px 13px;font-size:13px;margin-bottom:14px}
+
+/* ticket */
+.ticket{position:relative;background:linear-gradient(165deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:20px 18px 16px;overflow:hidden}
+.ticket::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--ac)}
+.t-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.t-top h2{margin:0;font:700 19px/1.2 var(--display)}
+.t-top p{margin:3px 0 0;color:var(--sub);font-size:13px}
+.big{display:flex;align-items:baseline;gap:10px;margin:14px 0 4px}
+.big b{font:800 clamp(60px,20vw,84px)/0.95 var(--display);letter-spacing:-.04em;color:var(--ac);font-variant-numeric:tabular-nums}
+.big span{color:var(--sub);font-size:13px;max-width:9ch;line-height:1.25}
+.perf{position:relative;margin:16px -18px 4px;border-top:2px dashed var(--line);height:0}
+.perf::before,.perf::after{content:"";position:absolute;top:-11px;width:20px;height:20px;border-radius:50%;background:var(--bg)}
+.perf::before{left:-10px}.perf::after{right:-10px}
+.ml{list-style:none;margin:0;padding:0}
+.mr{display:grid;grid-template-columns:26px 1fr auto;gap:2px 11px;padding:13px 0;border-bottom:1px solid rgba(53,45,76,.7);align-items:start}
+.mr:last-child{border-bottom:0}
+.mark{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:12px;font-weight:800;margin-top:1px}
+.st-w .mark{background:var(--win);border-color:var(--win);color:#06281c}
+.st-l .mark{background:var(--loss);border-color:var(--loss);color:#2c0610}
+.mi b{display:block;font-weight:700;font-size:14.5px;line-height:1.3}
+.mi small{display:flex;flex-wrap:wrap;gap:2px 12px;color:var(--sub);font-size:12px;margin-top:3px}
+.mt{text-align:right}
+.chip{display:inline-block;background:rgba(255,255,255,.07);border:1px solid var(--line);color:var(--ac);padding:3px 9px;border-radius:8px;font-size:12.5px;font-weight:700;max-width:150px}
+.mt small{display:block;color:var(--sub);font-size:12px;margin-top:4px;font-variant-numeric:tabular-nums}
+.mt small b{color:var(--text);font-size:13px}
+.pb{grid-column:2 / 4;display:flex;align-items:center;gap:8px;margin-top:6px;color:var(--sub);font-size:11.5px}
+.pb div{flex:1;height:4px;background:var(--line);border-radius:3px;overflow:hidden}
+.pb u{display:block;height:100%;background:var(--ac);border-radius:3px}
+.st-w .pb u{background:var(--win)}.st-l .pb u{background:var(--loss)}
+.t-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:10px;color:var(--sub);font-size:12.5px}
+.copy{background:var(--ac);color:#150f06;border:0;border-radius:11px;padding:10px 16px;font-weight:700;font-size:13.5px;cursor:pointer;flex-shrink:0}
+.copy:active{transform:scale(.97)}
+
+/* badges */
+.badge{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+.b-w{background:rgba(70,217,160,.15);color:var(--win)}
+.b-l{background:rgba(255,107,122,.15);color:var(--loss)}
+.b-p{background:rgba(255,255,255,.08);color:var(--sub)}
+
+/* record */
+.rec{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin-top:14px}
+.rec strong{font:800 28px/1 var(--display);color:var(--ac);font-variant-numeric:tabular-nums}
+.rec div{flex:1;min-width:0}
+.rec span{display:block;font-size:13px;color:var(--sub)}
+.rec .rb{height:6px;background:var(--line);border-radius:4px;overflow:hidden;margin-top:7px}
+.rec .rb i{display:block;height:100%;background:var(--win);border-radius:4px}
+
+/* history */
+h3.sec{font:700 17px var(--display);margin:26px 2px 10px}
+.hi{background:var(--panel);border:1px solid var(--line);border-radius:16px;margin-bottom:9px;overflow:hidden}
+.hi summary{list-style:none;display:flex;align-items:center;gap:10px;padding:14px 15px;cursor:pointer}
+.hi summary::-webkit-details-marker{display:none}
+.hi summary::after{content:"";width:8px;height:8px;border-right:2px solid var(--sub);border-bottom:2px solid var(--sub);transform:rotate(45deg);transition:transform .2s;margin:-3px 2px 0 4px;flex-shrink:0}
+.hi[open] summary::after{transform:rotate(-135deg);margin-top:4px}
+.hd{flex:1;font-weight:700;font-size:14px;min-width:0}
+.hd small{display:block;font-weight:400;color:var(--sub);font-size:12px}
+.ho{font:700 16px var(--display);font-variant-numeric:tabular-nums}
+.hi .ml{padding:0 15px 6px;border-top:1px solid var(--line)}
+
+/* phantom days */
+.dayrow{padding:12px 0;border-bottom:1px solid rgba(53,45,76,.7)}
+.dayrow:last-child{border-bottom:0}
+.dayrow h4{margin:0 0 2px;font:700 13.5px var(--display);color:var(--ac);text-transform:capitalize}
+.dayrow .ml .mr{padding:6px 0 4px;border:0}
+.empty-d{color:var(--sub);font-size:13px;padding:2px 0}
+.dayrow.now h4::after{content:"leo";margin-left:8px;background:var(--ac);color:#150f06;border-radius:6px;padding:1px 7px;font-size:11px;font-weight:700;text-transform:none}
+
+/* empty + skeleton */
+.empty{text-align:center;color:var(--sub);padding:34px 18px;background:var(--panel);border:1px dashed var(--line);border-radius:18px}
+.empty b{display:block;color:var(--text);font:700 17px var(--display);margin-bottom:6px}
+.sk{height:78px;border-radius:16px;margin-bottom:10px;background:linear-gradient(100deg,var(--panel) 30%,var(--panel2) 50%,var(--panel) 70%);background-size:300% 100%;animation:sh 1.3s linear infinite}
+.sk.tall{height:330px;border-radius:22px}
+@keyframes sh{from{background-position:100% 0}to{background-position:-100% 0}}
+
+/* nav */
+nav{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;justify-content:center;
+  padding:8px 14px calc(env(safe-area-inset-bottom,0px) + 8px);background:linear-gradient(to top,var(--bg) 70%,transparent)}
+.nav-in{display:flex;gap:6px;width:100%;max-width:560px;background:rgba(36,30,53,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:20px;padding:6px}
+.nb{flex:1;border:0;background:transparent;border-radius:14px;padding:9px 4px 8px;cursor:pointer;color:var(--sub);display:flex;flex-direction:column;align-items:center;gap:3px;font-size:12px;font-weight:700;transition:background .2s,color .2s}
+.nb svg{width:22px;height:22px}
+.nb .num{width:22px;height:22px;border-radius:50%;border:2px solid currentColor;display:grid;place-items:center;font:800 12px var(--display)}
+.nb.on{background:var(--c);color:#150f06}
+.nb[data-tab=o3]{--c:var(--gold)}.nb[data-tab=o5]{--c:var(--ember)}.nb[data-tab=ph]{--c:var(--ghost)}
+
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 96px);transform:translate(-50%,20px);background:var(--text);color:#150f1f;padding:10px 18px;border-radius:12px;font-weight:700;font-size:13.5px;opacity:0;pointer-events:none;transition:.25s;z-index:60}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.t-act{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.cam{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--ac);display:grid;place-items:center;cursor:pointer;padding:0}
+.cam svg{width:19px;height:19px}
+.cam:active{transform:scale(.93)}
+
+.shot{position:fixed;inset:0;z-index:40;background:rgba(9,7,14,.95);overflow:auto;display:none;flex-direction:column;align-items:center;gap:14px;
+  padding:calc(env(safe-area-inset-top,0px) + 16px) 14px calc(env(safe-area-inset-bottom,0px) + 18px)}
+.shot.on{display:flex}
+.sc{width:100%;max-width:380px;flex-shrink:0;background:#171223;border:1px solid #352d4c;border-radius:20px;padding:22px 18px 16px;color:#f4f1fa;position:relative;overflow:hidden}
+.sc::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--ac)}
+.sc-h{display:flex;align-items:center;gap:10px}
+.sc-h .mark-logo{width:34px;height:34px;border-radius:11px;font-size:14px}
+.sc-h b{font:800 16px var(--display)}.sc-h b span{color:var(--gold)}
+.sc-t{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;margin:18px 0 8px}
+.sc-t h4{margin:0;font:700 16px var(--display)}
+.sc-t small{display:block;color:#9d96b3;font-size:12.5px;margin-top:2px}
+.sc-t strong{font:800 46px/0.95 var(--display);color:var(--ac);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.sdy{font:700 12.5px var(--display);color:var(--ac);padding:12px 0 2px;text-transform:capitalize;border-top:1px solid #2c2540}
+.sr{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 0;border-top:1px solid #2c2540}
+.sdy + .sr{border-top:0}
+.sr b{display:block;font-weight:700;font-size:13.5px;line-height:1.3}
+.sr small{color:#9d96b3;font-size:11.5px}
+.sp{text-align:right;flex-shrink:0;max-width:46%}
+.sp span{display:block;color:var(--ac);font-weight:700;font-size:12.5px}
+.sp em{font-style:normal;font-weight:700;font-size:13px;font-variant-numeric:tabular-nums}
+.sc-f{margin-top:10px;padding-top:10px;border-top:1px dashed #352d4c;text-align:center;color:#7d7595;font-size:11px}
+.sa{display:flex;gap:10px;width:100%;max-width:380px}
+.sa button{flex:1;padding:13px;border-radius:13px;border:0;font-weight:700;font-size:14px;cursor:pointer}
+.sa .go{background:var(--ac);color:#150f06}
+.sa .x{background:var(--panel2);color:var(--text);border:1px solid var(--line)}
+.sh-hint{color:var(--sub);font-size:12.5px;text-align:center;margin:0}
+.note{font-size:11.5px;color:var(--sub);text-align:center;margin:26px 8px 0;line-height:1.55}
+#app.swap{animation:in .28s ease-out}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="mark-logo" aria-hidden="true">PG</div>
+      <div><h1>PRIME <span>GOAT</span> TIPS</h1><small>Mikeka ya kila siku</small></div>
+    </div>
+    <div class="today" id="date">--</div>
+  </header>
+
+  <main id="app" aria-live="polite"></main>
+
+  <p class="note">Hii ni uchambuzi wa takwimu za soko, si uhakika wa matokeo. Mpira hauna uhakika; cheza kwa kiasi unachoweza kupoteza. 18+.</p>
+</div>
+
+<nav aria-label="Aina za mikeka">
+  <div class="nav-in" role="tablist">
+    <button class="nb on" data-tab="o3" role="tab"><span class="num">3</span>Odds 3</button>
+    <button class="nb" data-tab="o5" role="tab"><span class="num">5</span>Odds 5</button>
+    <button class="nb" data-tab="ph" role="tab">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V11a7 7 0 0 1 14 0v10l-3-2-2 2-2-2-2 2-2-2z"/><circle cx="9.5" cy="11" r="1" fill="currentColor"/><circle cx="14.5" cy="11" r="1" fill="currentColor"/></svg>
+      Phantom
+    </button>
+  </div>
+</nav>
+<div class="shot" id="shot" role="dialog" aria-modal="true" aria-label="Picha ya mkeka"></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script type="module">
+// ====== MIPANGILIO ======
+// Kumbuka: key ya Odds API ikiwa hapa inaonekana kwa kila mtu. Kwa usalama weka kwenye server/proxy.
+const API_KEY = '5dacfa9e32458a9bb918d11f811d88cc';
+const FB_CONFIG = {
+  apiKey: "AIzaSyBXLW5Vq7dbpxh750DGCIia-camkIiJ1S8",
+  authDomain: "moby-42aca.firebaseapp.com",
+  databaseURL: "https://moby-42aca-default-rtdb.firebaseio.com",
+  projectId: "moby-42aca",
+  storageBucket: "moby-42aca.firebasestorage.app",
+  messagingSenderId: "170893692184",
+  appId: "1:170893692184:web:1ea7276b746260789da26d"
+};
+const TARGETS = { o3: 3.0, o5: 5.0 };
+const PH_MIN = 30, PH_MAX = 50; // Phantom Odds ya wiki: jumla ya odds kati ya 30 na 50
+const LEAGUES = [
+  'soccer_epl','soccer_spain_la_liga','soccer_germany_bundesliga','soccer_italy_serie_a',
+  'soccer_france_ligue_one','soccer_uefa_champs_league','soccer_uefa_europa_league',
+  'soccer_netherlands_eredivisie','soccer_portugal_primeira_liga','soccer_turkey_super_league',
+  'soccer_efl_champ'
+];
+// ========================
+
+const CFG = {
+  o3: { name: 'Odds 3', ac: 'var(--gold)' },
+  o5: { name: 'Odds 5', ac: 'var(--ember)' },
+  ph: { name: 'Phantom Odds', ac: 'var(--ghost)' }
+};
+const BADGE = { w: 'Ushindi', l: 'Imepoteza', p: 'Inasubiri' };
+const ICON = { w: '✓', l: '✕', p: '' };
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const pad = n => String(n).padStart(2, '0');
+const dk = d => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const parseDK = k => { const [y,m,d] = k.split('-').map(Number); return new Date(y, m-1, d); };
+const mondayOf = d => { const x = new Date(d.getFullYear(), d.getMonth(), d.getDate()); x.setDate(x.getDate() - ((x.getDay()+6)%7)); return x; };
+const fmt = (d, o) => d.toLocaleDateString('sw-TZ', o);
+const iso = d => d.toISOString().replace(/\.\d{3}Z$/, 'Z');
+const mean = a => a.reduce((x,y) => x+y, 0) / a.length;
+
+const S = {
+  tab: 'o3', loading: true, note: '',
+  o3: { today: null, hist: [] },
+  o5: { today: null, hist: [] },
+  ph: { cur: null, hist: [] }
+};
+let DB = null;
+
+$('#date').textContent = fmt(new Date(), { weekday: 'short', day: 'numeric', month: 'short' });
+
+/* ---------- Firebase ---------- */
+async function initDB(){
+  try{
+    const [A, D] = await Promise.all([
+      import('https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js'),
+      import('https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js')
+    ]);
+    const db = D.getDatabase(A.initializeApp(FB_CONFIG));
+    DB = {
+      async get(p){ const s = await D.get(D.ref(db, p)); return s.exists() ? s.val() : null; },
+      async set(p, v){ await D.set(D.ref(db, p), JSON.parse(JSON.stringify(v))); },
+      async track(p, incs, sets){
+        const o = { ...(sets || {}) };
+        for (const k in incs) o[k] = D.increment(incs[k]);
+        await D.update(D.ref(db, p), o);
+      }
+    };
+  }catch(e){ console.warn('Firebase imeshindwa', e); DB = null; }
+}
+async function save(path, doc){
+  if (!DB) return;
+  try{ await DB.set(path, doc); }catch(e){ console.warn('Imeshindwa kuhifadhi', e); }
+}
+const fixDoc = d => {
+  d.matches = (Array.isArray(d.matches) ? d.matches : Object.values(d.matches || {}))
+    .sort((a,b) => new Date(a.t) - new Date(b.t));
+  return d;
+};
+const toList = (obj, key) => Object.values(obj || {}).map(fixDoc).sort((a,b) => b[key].localeCompare(a[key]));
+
+/* ---------- Takwimu za wageni ---------- */
+function visitorId(){
+  try{
+    let v = localStorage.getItem('pg_vid');
+    if (v) return { v, isNew: false };
+    v = Math.random().toString(36).slice(2, 10) + Date.now().toString(36);
+    localStorage.setItem('pg_vid', v);
+    return { v, isNew: true };
+  }catch{ return { v: 'x' + Math.random().toString(36).slice(2, 10), isNew: true }; }
+}
+async function track(){
+  if (!DB) return;
+  try{
+    const day = dk(new Date());
+    if (sessionStorage.getItem('pg_seen') === day) return; // ziara moja kwa kila kikao
+    sessionStorage.setItem('pg_seen', day);
+    const { v, isNew } = visitorId();
+    const incs = { views: 1, ['h/' + new Date().getHours()]: 1, ['tabs/' + S.tab]: 1,
+      ['dev/' + (/Mobi|Android|iPhone/i.test(navigator.userAgent) ? 'm' : 'd')]: 1 };
+    if (isNew) incs.new = 1;
+    await DB.track('stats/days/' + day, incs, { ['u/' + v]: true });
+  }catch(e){ console.warn('track', e); }
+}
+async function trackTab(t){
+  if (!DB) return;
+  try{ await DB.track('stats/days/' + dk(new Date()), { ['tabs/' + t]: 1 }); }catch{}
+}
+
+/* ---------- Odds API ---------- */
+async function loadLeague(key, from, to){
+  const url = `https://api.the-odds-api.com/v4/sports/${key}/odds/?apiKey=${API_KEY}` +
+    `&regions=eu&markets=h2h,totals&oddsFormat=decimal&commenceTimeFrom=${iso(from)}&commenceTimeTo=${iso(to)}`;
+  const r = await fetch(url);
+  if (!r.ok) throw new Error(r.status);
+  return r.json();
+}
+
+function analyze(ev){
+  const H = [], D = [], A = [], O = [], bestOdd = {};
+  const best = (k, v) => { if (!bestOdd[k] || v > bestOdd[k]) bestOdd[k] = v; };
+  (ev.bookmakers || []).forEach(b => {
+    const h2h = b.markets.find(m => m.key === 'h2h');
+    if (h2h){
+      const g = n => (h2h.outcomes.find(o => o.name === n) || {}).price;
+      const ph = g(ev.home_team), pa = g(ev.away_team), pd = g('Draw');
+      if (ph && pa && pd){
+        const s = 1/ph + 1/pa + 1/pd;
+        H.push(1/ph/s); A.push(1/pa/s); D.push(1/pd/s);
+        best('1', ph); best('2', pa);
+      }
+    }
+    const tot = b.markets.find(m => m.key === 'totals');
+    if (tot){
+      const ov = tot.outcomes.find(o => o.name === 'Over' && o.point === 2.5);
+      const un = tot.outcomes.find(o => o.name === 'Under' && o.point === 2.5);
+      if (ov && un){
+        const s = 1/ov.price + 1/un.price;
+        O.push(1/ov.price/s);
+        best('O', ov.price); best('U', un.price);
+      }
+    }
+  });
+  if (H.length < 3) return null;
+
+  const ph = mean(H), pd = mean(D), pa = mean(A);
+  const c = [
+    { code: '1',  label: `${ev.home_team} ashinde`, p: ph, odd: bestOdd['1'] },
+    { code: '2',  label: `${ev.away_team} ashinde`, p: pa, odd: bestOdd['2'] },
+    { code: '1X', label: `${ev.home_team} au sare`, p: ph + pd, odd: 0.95 / (ph + pd), approx: true },
+    { code: 'X2', label: `${ev.away_team} au sare`, p: pa + pd, odd: 0.95 / (pa + pd), approx: true }
+  ];
+  if (O.length >= 3){
+    const po = mean(O);
+    c.push({ code: 'O', label: 'Over 2.5 Goals',  p: po,     odd: bestOdd['O'] });
+    c.push({ code: 'U', label: 'Under 2.5 Goals', p: 1 - po, odd: bestOdd['U'] });
+  }
+  const pick = c.filter(x => x.odd >= 1.20).sort((a,b) => b.p - a.p)[0];
+  if (!pick) return null;
+  return { ev, time: new Date(ev.commence_time), pick };
+}
+
+const toMatch = a => ({
+  id: a.ev.id, sk: a.ev.sport_key, home: a.ev.home_team, away: a.ev.away_team, league: a.ev.sport_title,
+  t: a.time.toISOString(), code: a.pick.code, label: a.pick.label,
+  odd: +a.pick.odd.toFixed(2), p: +a.pick.p.toFixed(3), approx: !!a.pick.approx, st: 'p'
+});
+
+function buildSlip(list, target){
+  const sorted = [...list].sort((a,b) => b.pick.p - a.pick.p);
+  const matches = []; let prod = 1;
+  for (const m of sorted){
+    if (prod >= target) break;
+    matches.push(toMatch(m)); prod *= m.pick.odd;
+  }
+  return { matches, total: +prod.toFixed(2), reached: prod >= target * 0.9 };
+}
+
+/* ---------- Matokeo (settle) ---------- */
+const evalPick = (code, h, a) => ({ '1': h > a, '2': a > h, '1X': h >= a, 'X2': a >= h, 'O': h + a > 2.5, 'U': h + a < 2.5 })[code];
+
+function docStatus(d){
+  const ms = d.matches || [];
+  if (ms.some(m => m.st === 'l')) return 'l';
+  if (!ms.length || !ms.every(m => m.st === 'w')) return 'p';
+  if (d.type === 'ph' && d.end >= dk(new Date())) return 'p'; // wiki bado haijaisha
+  return 'w';
+}
+function allSlips(){
+  const a = [];
+  ['o3','o5'].forEach(k => {
+    if (S[k].today) a.push([`slips/${k}/${S[k].today.date}`, S[k].today]);
+    S[k].hist.forEach(d => a.push([`slips/${k}/${d.date}`, d]));
+  });
+  if (S.ph.cur) a.push([`slips/ph/${S.ph.cur.week}`, S.ph.cur]);
+  S.ph.hist.forEach(d => a.push([`slips/ph/${d.week}`, d]));
+  return a;
+}
+async function settle(){
+  const now = Date.now();
+  const slips = allSlips();
+  const pend = slips.flatMap(([, d]) => d.matches).filter(m => m.st === 'p' && new Date(m.t).getTime() + 3*3600e3 < now);
+  if (!pend.length) return;
+  const sks = [...new Set(pend.map(m => m.sk))];
+  const res = await Promise.allSettled(sks.map(async sk => {
+    const r = await fetch(`https://api.the-odds-api.com/v4/sports/${sk}/scores/?apiKey=${API_KEY}&daysFrom=3`);
+    if (!r.ok) throw new Error(r.status);
+    return r.json();
+  }));
+  const scores = {};
+  res.forEach(r => { if (r.status === 'fulfilled') r.value.forEach(e => {
+    if (!e.completed || !e.scores) return;
+    const h = e.scores.find(s => s.name === e.home_team), a = e.scores.find(s => s.name === e.away_team);
+    if (h && a) scores[e.id] = [Number(h.score), Number(a.score)];
+  }); });
+  let changed = false;
+  for (const [path, d] of slips){
+    let dirty = false;
+    d.matches.forEach(m => {
+      const s = scores[m.id];
+      if (m.st === 'p' && s){ m.st = evalPick(m.code, s[0], s[1]) ? 'w' : 'l'; m.sc = `${s[0]}-${s[1]}`; dirty = true; }
+    });
+    if (dirty){ d.status = docStatus(d); changed = true; await save(path, d); }
+  }
+  if (changed) render();
+}
+
+/* ---------- Render ---------- */
+function matchRow(m, withDay){
+  const t = new Date(m.t);
+  const time = t.toLocaleTimeString('sw-TZ', { hour: '2-digit', minute: '2-digit' });
+  const pct = Math.round(m.p * 100);
+  return `<li class="mr st-${m.st}">
+    <span class="mark" role="img" aria-label="${BADGE[m.st]}">${ICON[m.st]}</span>
+    <div class="mi"><b>${esc(m.home)} vs ${esc(m.away)}</b>
+      <small><span>${esc(m.league)}</span><span>${withDay ? esc(fmt(t, { weekday: 'short' })) + ' ' : ''}${time}</span>${m.sc ? `<span>Matokeo ${esc(m.sc)}</span>` : ''}</small></div>
+    <div class="mt"><span class="chip">${esc(m.label)}</span><small>Odds <b>${m.approx ? '≈' : ''}${m.odd.toFixed(2)}</b></small></div>
+    <div class="pb"><div><u style="width:${pct}%"></u></div>nafasi ${pct}%</div>
+  </li>`;
+}
+
+function copyText(d, title){
+  const lines = d.matches.map((m,i) => `${i+1}) ${m.home} vs ${m.away}: ${m.label} @${m.odd.toFixed(2)}`);
+  return `PRIME GOAT TIPS - ${title}\n${lines.join('\n')}\nJumla ya odds: ${d.total.toFixed(2)}`;
+}
+
+function ticket(d, k){
+  const title = k === 'ph' ? 'Mkeka wa wiki' : 'Mkeka wa leo';
+  const sub = k === 'ph'
+    ? `${fmt(parseDK(d.week), { day: 'numeric', month: 'short' })} hadi ${fmt(parseDK(d.end), { day: 'numeric', month: 'short' })}`
+    : fmt(parseDK(d.date), { weekday: 'long', day: 'numeric', month: 'long' });
+  const st = docStatus(d);
+  let foot;
+  if (k === 'ph') foot = `Lengo la odds ${PH_MIN} hadi ${PH_MAX}. Mechi zinaongezwa kila siku.`;
+  else foot = d.reached ? 'Mechi zilizochaguliwa za leo.' : `Mechi za leo hazitoshi kufikia odds ${TARGETS[k]} kikamilifu.`;
+  const body = k === 'ph' ? weekDays(d) : `<ul class="ml">${d.matches.map(m => matchRow(m)).join('')}</ul>`;
+  return `<article class="ticket">
+    <div class="t-top"><div><h2>${title}</h2><p>${esc(sub)}</p></div>
+      <div class="t-act"><span class="badge b-${st}">${BADGE[st]}</span>
+      <button class="cam" data-shot="${k}" aria-label="Tengeneza picha ya mkeka"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.5"/></svg></button></div></div>
+    <div class="big"><b>${d.total.toFixed(2)}</b><span>jumla ya odds</span></div>
+    <div class="perf"></div>
+    ${body}
+    <div class="t-foot"><span>${foot}</span><button class="copy" data-copy="${k}" data-id="${esc(k === 'ph' ? d.week : d.date)}">Nakili mkeka</button></div>
+  </article>`;
+}
+
+function weekDays(d){
+  const mon = parseDK(d.week), todayK = dk(new Date());
+  let h = '';
+  for (let i = 0; i < 7; i++){
+    const day = new Date(mon); day.setDate(mon.getDate() + i);
+    const k = dk(day);
+    const ms = d.matches.filter(m => dk(new Date(m.t)) === k);
+    const label = k < todayK ? 'Hakuna pick siku hii' : (k === todayK ? 'Mechi bado hazijatoka' : 'Inasubiri mechi');
+    h += `<div class="dayrow${k === todayK ? ' now' : ''}"><h4>${esc(fmt(day, { weekday: 'long', day: 'numeric', month: 'short' }))}</h4>
+      ${ms.length ? `<ul class="ml">${ms.map(m => matchRow(m)).join('')}</ul>` : `<div class="empty-d">${label}</div>`}</div>`;
+  }
+  return h;
+}
+
+function record(list, label){
+  const settled = list.filter(d => docStatus(d) !== 'p');
+  if (!settled.length) return '';
+  const won = settled.filter(d => docStatus(d) === 'w').length;
+  const pct = Math.round(won / settled.length * 100);
+  return `<div class="rec"><strong>${won}/${settled.length}</strong>
+    <div><span>${label} zilizoshinda (${pct}%)</span><div class="rb"><i style="width:${pct}%"></i></div></div></div>`;
+}
+
+function historyList(list, k){
+  if (!list.length) return `<div class="empty"><b>Historia bado tupu</b>Mikeka ya siku zilizopita itaonekana hapa.</div>`;
+  return list.map(d => {
+    const st = docStatus(d);
+    const head = k === 'ph'
+      ? `Wiki ya ${fmt(parseDK(d.week), { day: 'numeric', month: 'short' })}<small>hadi ${fmt(parseDK(d.end), { day: 'numeric', month: 'short' })}</small>`
+      : `${esc(fmt(parseDK(d.date), { weekday: 'short', day: 'numeric', month: 'short' }))}<small>mechi ${d.matches.length}</small>`;
+    return `<details class="hi"><summary><span class="hd">${head}</span><span class="ho">${d.total.toFixed(2)}</span><span class="badge b-${st}">${BADGE[st]}</span></summary>
+      <ul class="ml">${d.matches.map(m => matchRow(m, k === 'ph')).join('')}</ul></details>`;
+  }).join('');
+}
+
+function viewSlip(k){
+  const d = S[k];
+  const top = d.today
+    ? ticket(d.today, k)
+    : `<div class="empty"><b>Mkeka wa leo bado</b>Hakuna mechi za kutosha zenye data ya kuaminika. Rudi baadaye mechi zikitoka.</div>`;
+  return top + record([d.today, ...d.hist].filter(Boolean), 'Mikeka') +
+    `<h3 class="sec">Historia ya ${CFG[k].name}</h3>` + historyList(d.hist, k);
+}
+function viewPh(){
+  const d = S.ph;
+  const top = d.cur && d.cur.matches.length
+    ? ticket(d.cur, 'ph')
+    : `<div class="empty"><b>Phantom ya wiki hii bado</b>Mkeka wa wiki unajengwa mechi zikitoka, hadi odds ifike 30 hadi 50.</div>`;
+  return top + record([d.cur, ...d.hist].filter(Boolean), 'Wiki') +
+    `<h3 class="sec">Historia ya Phantom</h3>` + historyList(d.hist, 'ph');
+}
+
+function render(swap){
+  document.querySelectorAll('.nb').forEach(b => {
+    const on = b.dataset.tab === S.tab;
+    b.classList.toggle('on', on); b.setAttribute('aria-selected', on);
+  });
+  const app = $('#app');
+  app.style.setProperty('--ac', CFG[S.tab].ac);
+  const banner = S.note ? `<div class="banner">${S.note}</div>` : '';
+  app.innerHTML = banner + (S.loading
+    ? '<div class="sk tall"></div><div class="sk"></div><div class="sk"></div>'
+    : (S.tab === 'ph' ? viewPh() : viewSlip(S.tab)));
+  if (swap){ app.classList.remove('swap'); void app.offsetWidth; app.classList.add('swap'); }
+}
+
+function toast(t){
+  const el = $('#toast'); el.textContent = t; el.classList.add('show');
+  clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove('show'), 1800);
+}
+
+document.querySelectorAll('.nb').forEach(b => b.addEventListener('click', () => {
+  S.tab = b.dataset.tab; render(true); window.scrollTo({ top: 0 }); trackTab(S.tab);
+}));
+$('#app').addEventListener('click', async e => {
+  const b = e.target.closest('[data-copy]'); if (!b) return;
+  const k = b.dataset.copy;
+  const d = k === 'ph' ? S.ph.cur : S[k].today;
+  if (!d) return;
+  try{ await navigator.clipboard.writeText(copyText(d, CFG[k].name)); toast('Mkeka umenakiliwa'); }
+  catch{ toast('Imeshindwa kunakili'); }
+});
+
+/* ---------- Picha ya mkeka (camera) ---------- */
+function shotCard(d, k){
+  const isPh = k === 'ph';
+  const sub = isPh
+    ? `${fmt(parseDK(d.week), { day: 'numeric', month: 'short' })} hadi ${fmt(parseDK(d.end), { day: 'numeric', month: 'short' })}`
+    : fmt(parseDK(d.date), { weekday: 'long', day: 'numeric', month: 'long' });
+  const row = m => {
+    const t = new Date(m.t).toLocaleTimeString('sw-TZ', { hour: '2-digit', minute: '2-digit' });
+    return `<div class="sr"><div><b>${esc(m.home)} vs ${esc(m.away)}</b><small>${t}</small></div>
+      <div class="sp"><span>${esc(m.label)}</span><em>${m.approx ? '≈' : ''}${m.odd.toFixed(2)}</em></div></div>`;
+  };
+  let rows = '';
+  if (isPh){
+    const mon = parseDK(d.week);
+    for (let i = 0; i < 7; i++){
+      const day = new Date(mon); day.setDate(mon.getDate() + i);
+      const ms = d.matches.filter(m => dk(new Date(m.t)) === dk(day));
+      if (ms.length) rows += `<div class="sdy">${esc(fmt(day, { weekday: 'long', day: 'numeric', month: 'short' }))}</div>` + ms.map(row).join('');
+    }
+  } else rows = d.matches.map(row).join('');
+  return `<div class="sc" id="sc">
+    <div class="sc-h"><div class="mark-logo">PG</div><b>PRIME <span>GOAT</span> TIPS</b></div>
+    <div class="sc-t"><div><h4>${CFG[k].name}</h4><small>${esc(sub)}</small></div><strong>${d.total.toFixed(2)}</strong></div>
+    ${rows}
+    <div class="sc-f">18+ Cheza kwa kiasi unachoweza kupoteza</div>
+  </div>
+  <div class="sa"><button class="go" data-shotact="save">Hifadhi picha</button><button class="x" data-shotact="close">Funga</button></div>
+  <p class="sh-hint">Au piga screenshot moja kwa moja</p>`;
+}
+function openShot(k){
+  const d = k === 'ph' ? S.ph.cur : S[k].today;
+  if (!d || !d.matches.length){ toast('Hakuna mkeka wa kupiga picha'); return; }
+  const el = $('#shot');
+  el.style.setProperty('--ac', CFG[k].ac);
+  el.innerHTML = shotCard(d, k);
+  el.scrollTop = 0; el.classList.add('on');
+  document.body.style.overflow = 'hidden';
+}
+function closeShot(){ $('#shot').classList.remove('on'); document.body.style.overflow = ''; }
+async function saveShot(){
+  const el = $('#sc');
+  if (!el) return;
+  if (!window.html2canvas){ toast('Piga screenshot kawaida'); return; }
+  toast('Inatengeneza picha...');
+  try{
+    const cv = await html2canvas(el, { backgroundColor: '#110e1b', scale: 2, useCORS: true });
+    const blob = await new Promise(r => cv.toBlob(r, 'image/png'));
+    const file = new File([blob], `prime-goat-tips-${dk(new Date())}.png`, { type: 'image/png' });
+    if (navigator.canShare && navigator.canShare({ files: [file] })){
+      await navigator.share({ files: [file], title: 'PRIME GOAT TIPS' });
+      return;
+    }
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = file.name; a.click();
+    toast('Picha imehifadhiwa');
+  }catch(e){
+    if (e && e.name === 'AbortError') return;
+    toast('Imeshindwa, piga screenshot kawaida');
+  }
+}
+document.addEventListener('click', e => {
+  const cam = e.target.closest('[data-shot]');
+  if (cam){ openShot(cam.dataset.shot); return; }
+  const act = e.target.closest('[data-shotact]');
+  if (!act) return;
+  if (act.dataset.shotact === 'close') closeShot(); else saveShot();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeShot(); });
+
+/* ---------- Anza ---------- */
+async function init(){
+  render();
+  await initDB();
+  track();
+  const now = new Date(), todayK = dk(now);
+  const mon = mondayOf(now), weekK = dk(mon);
+  const sun = new Date(mon); sun.setDate(mon.getDate() + 6); sun.setHours(23,59,59,0);
+
+  // 1. Soma historia
+  let raw = { o3: null, o5: null, ph: null };
+  if (DB){
+    try{ [raw.o3, raw.o5, raw.ph] = await Promise.all(['o3','o5','ph'].map(k => DB.get('slips/' + k))); }
+    catch(e){ console.warn(e); DB = null; S.note = 'Historia haipatikani. Hakikisha Firebase Realtime Database rules zinaruhusu kusoma na kuandika kwenye <b>slips</b>.'; }
+  } else S.note = 'Firebase haikuunganika, historia haitahifadhiwa.';
+  ['o3','o5'].forEach(k => {
+    const list = toList(raw[k], 'date');
+    S[k].today = list.find(d => d.date === todayK) || null;
+    S[k].hist = list.filter(d => d.date < todayK).slice(0, 30);
+  });
+  const phs = toList(raw.ph, 'week');
+  S.ph.cur = phs.find(d => d.week === weekK) || null;
+  S.ph.hist = phs.filter(d => d.week < weekK).slice(0, 20);
+  S.loading = false; render();
+
+  // 2. Vuta odds mpya mara moja kwa siku (inahifadhi credits)
+  const needFetch = !DB || !S.ph.cur || S.ph.cur.checked !== todayK || !S.ph.cur.v;
+  if (needFetch){
+    const results = await Promise.allSettled(LEAGUES.map(l => loadLeague(l, now, sun)));
+    if (results.every(r => r.status === 'rejected')){
+      if (!S.o3.today && !S.o5.today) S.note = (S.note ? S.note + '<br>' : '') + 'Imeshindwa kuvuta odds. Hakikisha API key ni sahihi na bado una credits.';
+      render();
+    } else {
+      const analyzed = results.filter(r => r.status === 'fulfilled').flatMap(r => r.value).map(analyze).filter(Boolean);
+      const todayList = analyzed.filter(a => dk(a.time) === todayK);
+
+      for (const k of ['o3','o5']){
+        if (!S[k].today && todayList.length){
+          const s = buildSlip(todayList, TARGETS[k]);
+          if (s.matches.length){
+            S[k].today = { type: k, date: todayK, target: TARGETS[k], status: 'p', ...s };
+            await save(`slips/${k}/${todayK}`, S[k].today);
+          }
+        }
+      }
+
+      const ph = S.ph.cur || { type: 'ph', week: weekK, end: dk(sun), status: 'p', total: 0, matches: [] };
+      let prod = ph.matches.reduce((p, m) => p * m.odd, 1);
+      if (prod < PH_MIN){
+        const have = new Set(ph.matches.map(m => m.id));
+        // Zenye odds 1.30+ kwanza (zinafika lengo haraka), kisha uwezekano mkubwa zaidi
+        const pool = analyzed.filter(a => !have.has(a.ev.id))
+          .sort((a,b) => ((b.pick.odd >= 1.3) - (a.pick.odd >= 1.3)) || (b.pick.p - a.pick.p));
+        for (const a of pool){
+          if (prod >= PH_MIN) break;
+          if (prod * a.pick.odd > PH_MAX) continue;
+          ph.matches.push(toMatch(a)); prod *= a.pick.odd;
+        }
+      }
+      ph.matches.sort((a,b) => new Date(a.t) - new Date(b.t));
+      ph.total = ph.matches.length ? +prod.toFixed(2) : 0;
+      ph.checked = todayK; ph.v = 2;
+      S.ph.cur = ph;
+      await save(`slips/ph/${weekK}`, ph);
+      render();
+    }
+  }
+
+  // 3. Thibitisha matokeo ya mechi zilizopita
+  try{ await settle(); }catch(e){ console.warn(e); }
+}
+init();
+</script>
+</body>
+</html>
